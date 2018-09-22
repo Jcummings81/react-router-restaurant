@@ -2,7 +2,7 @@ class Api::MenusController < ApplicationController
   before_action :set_menu, only: [:show, :update, :destroy]
 
   def index
-    render json: Menu.all
+    render json: Menu.order(created_at: :desc)
   end
 
   def show

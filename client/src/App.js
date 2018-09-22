@@ -6,6 +6,9 @@ import NoMatch from './components/NoMatch'
 import NavBar from './components/NavBar'
 import Login from './components/Login'
 import Dashboard from './components/Dashboard'
+import Menu from './components/Menu'
+import ProtectedRoute from './components/ProtectedRoute'
+
 
 
 const App = () => (
@@ -14,8 +17,9 @@ const App = () => (
   <Switch>
     <Route exact path="/" component={Home} />
     <Route exaxt path="/Login" component={Login} />
-    <Route exaxt path="/Dashboard" component={Dashboard} />
     <Route exact path="/about" component={About} />
+    <ProtectedRoute exaxt path="/dashboard" component={Dashboard} />
+    <ProtectedRoute exact path="/menus/:id" component={Menu} />
     <Route component={NoMatch} />
   </Switch>
   </Fragment>
